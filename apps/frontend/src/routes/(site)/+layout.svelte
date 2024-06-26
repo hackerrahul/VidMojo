@@ -1,8 +1,16 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-    import { site_name, site_logo_dark } from "$lib/config";
+    import { site_name, site_logo_dark, site_title } from "$lib/config";
 
 </script>
+
+<svelte:head>
+    <title>
+        {site_name} - {site_title}
+    </title>
+</svelte:head>
+
+
 <div class="relative z-20 pt-[60px] md:h-screen md:max-h-[950px] md:pt-0">
 
     <!-- Header -->
@@ -11,19 +19,17 @@
         
         <div class="p-4">
             <div class=" flex items-center justify-between py-2 px-5 rounded-2xl border dark:border-muted/80 backdrop-blur-3xl shadow-md">
-                <div class="inline-flex items-center gap-2 select-none">
-                    <img class="size-5" src={site_logo_dark} alt={site_name}>
-                    <p class="text-sm font-inter-500">{site_name}</p>
-                </div>
+                <a href="/" class="inline-flex items-center gap-2 select-none">
+                        <img class="size-5" src={site_logo_dark} alt={site_name}>
+                        <p class="text-sm font-inter-500">{site_name}</p>
+                </a>
                 <div class="text-sm space-x-2 flex items-center">
 
-                    <div class="mr-2 flex items-center gap-4">
-                        <a href="/" class="font-inter-500 text-sm">Pricing</a>
-                        <a href="/" class="font-inter-500 text-sm">Features</a>
-                    </div>
 
+                    <Button href="/" variant="link" size="sm">Pricing</Button>
+                    <Button href="/" variant="link" size="sm">Features</Button>
                     <Button href="/auth/login" variant="outline" size="sm">Login</Button>
-                    <Button href="/auth/login" variant="default" size="sm">Signup</Button>
+                    <Button href="/auth/signup" variant="default" size="sm">Signup</Button>
                 </div>
             </div>
         </div>
