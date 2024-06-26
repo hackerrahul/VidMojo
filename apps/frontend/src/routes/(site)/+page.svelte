@@ -18,7 +18,7 @@
             AI Powered Video Creator
         </p>
         
-        <Button class="mt-6 rounded-xl" variant="default" size="lg">Get Started</Button>
+        <Button class="mt-6 rounded-xl" href="/auth/login" variant="default" size="lg">Get Started</Button>
     </div>
 
 </div>
